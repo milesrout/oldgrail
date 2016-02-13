@@ -1,7 +1,12 @@
+#!/usr/bin/env python3
+
 import argparse
+from pathlib import Path
 
 def init_project(args):
     """Initialise the project with a new Grailfile."""
+    grailfile = Path.cwd() / 'Grailfile'
+    grailfile.touch(exist_ok=False)
 
 def add_package(args):
     """Add a package to the project."""
@@ -25,4 +30,6 @@ parser_rm = subparsers.add_parser('rm')
 parser_rm.add_argument('name', metavar='package-name@x.y.z')
 parser_rm.set_defaults(func=rm_package)
 
-parser.parse_args()
+args = parser.parse_args()
+args.func(args)
+
