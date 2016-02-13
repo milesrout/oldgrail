@@ -1,0 +1,8 @@
+__pycache__/
+**/*.pyc
+**/Grailfile
+**/.grail
+bin/
+lib/
+pyvenv.cfg
+pip-selfcheck.json
