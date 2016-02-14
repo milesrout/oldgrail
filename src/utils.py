@@ -1,3 +1,7 @@
+class GrailError(RuntimeError):
+    """An error in Grail"""
+    pass
+
 def parse_pkgname(pkgname):
     package, version = None, None
     try:

@@ -11,10 +11,6 @@ import sys
 import grailfile_utils as gfutils
 import utils
 
-class GrailError(RuntimeError):
-    """An error in Grail"""
-    pass
-
 def cmd_init_grailfile(args):
     """Initialise the project with a new Grailfile."""
     grailfile_path = Path.cwd() / 'Grailfile'
@@ -54,7 +50,7 @@ def main():
     else: 
         try:
             args.func(args)
-        except GrailError as exc:
+        except utils.GrailError as exc:
             print('ERROR:', exc, file=sys.stderr)
 
 if __name__ == '__main__':
